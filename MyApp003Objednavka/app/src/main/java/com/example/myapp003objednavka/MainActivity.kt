@@ -57,6 +57,5 @@ class MainActivity : AppCompatActivity() {
         binding.rbBike3.setOnClickListener {
             binding.ivBike.setImageResource(R.drawable.oiz_m30_tr)
         }
-
     }
 }
