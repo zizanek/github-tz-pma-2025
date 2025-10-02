@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         val btnDelete = findViewById<Button>(R.id.btnDelete)
 
         // Nastavení obsluhy pro tlačítko Odeslat
-
         btnSend.setOnClickListener {
             val name = etName.text.toString()
             val surname = etSurname.text.toString()
@@ -43,6 +42,16 @@ class MainActivity : AppCompatActivity() {
             val formatedText = "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place."
 
             tvInformation.text = formatedText
+        }
+
+        // Nastavení obsluhy pro tlačítko Vymazat
+        btnDelete.setOnClickListener {
+            etName.text.clear()
+            etSurname.text.clear()
+            etPlace.text.clear()
+            etAge.text.clear()
+
+            tvInformation.text = ""
         }
 
 
