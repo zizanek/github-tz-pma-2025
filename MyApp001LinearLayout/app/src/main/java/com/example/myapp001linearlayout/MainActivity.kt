@@ -29,7 +29,22 @@ class MainActivity : AppCompatActivity() {
         val etAge = findViewById<EditText>(R.id.etAge)
         val tvInformation = findViewById<TextView>(R.id.tvInformation)
         val btnSend = findViewById<Button>(R.id.btnSend)
-        val btnDelete = findViewById<Button>(R.id.btnSend)
+        val btnDelete = findViewById<Button>(R.id.btnDelete)
+
+        // Nastavení obsluhy pro tlačítko Odeslat
+
+        btnSend.setOnClickListener {
+            val name = etName.text.toString()
+            val surname = etSurname.text.toString()
+            val place = etPlace.text.toString()
+            val age = etAge.text.toString()
+
+            // Zobrazení textu v TextView
+            val formatedText = "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place."
+
+            tvInformation.text = formatedText
+        }
+
 
 
 
