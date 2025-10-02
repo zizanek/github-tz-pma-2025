@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvOrderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jaké kolo chcete objednat?"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgBikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbBike1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oiz M10"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbBike2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oiz M20"/>
+
+        <RadioButton
+            android:id="@+id/rbBike3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oiz M30"/>
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbFork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lepší vidlice"/>
+
+    <CheckBox
+        android:id="@+id/cbSaddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lepší sedlo"/>
+
+    <CheckBox
+        android:id="@+id/cbHandleBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lepší říditka"/>
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Objednat Kolo"/>
+
+    <TextView
+        android:id="@+id/tvOdrer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Souhrn objednávky: "
+        android:background="@android:color/system_inverse_primary_light"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/ivBike"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/oiz_m10_tr"
+        android:scaleType="centerInside"/>
+
+
+
+
+
+</LinearLayout>
