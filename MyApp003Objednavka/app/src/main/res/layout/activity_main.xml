@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="30dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -85,9 +85,5 @@
         android:layout_marginTop="20dp"
         android:src="@drawable/oiz_m10_tr"
         android:scaleType="centerInside"/>
-
-
-
-
 
 </LinearLayout>
