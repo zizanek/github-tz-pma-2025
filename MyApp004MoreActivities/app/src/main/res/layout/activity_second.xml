@@ -13,7 +13,8 @@
         android:id="@+id/twInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Data z první aktivity:" />
+        android:text="Data z první aktivity."
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/btnThirdAct"
