@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         newNumber()
 
         binding.btnCheck.setOnClickListener {
-            val guessTip = binding.etGuess.toString()
+            val guessTip = binding.etGuess.text.toString()
             if(guessTip.isEmpty()) {
                 Toast.makeText(this, "Musíš zadat číslo!!!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
