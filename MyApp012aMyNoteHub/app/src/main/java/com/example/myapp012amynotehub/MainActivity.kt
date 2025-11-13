@@ -40,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         //val adapter = NoteAdapter()
         adapter = NoteAdapter(
             onEditClick = { note ->
-                // editace bude později
+                val intent = Intent(this, EditNoteActivity::class.java)
+                intent.putExtra("note_id", note.id)
+                startActivity(intent)
             },
             onDeleteClick = { note ->
                 deleteNote(note)
