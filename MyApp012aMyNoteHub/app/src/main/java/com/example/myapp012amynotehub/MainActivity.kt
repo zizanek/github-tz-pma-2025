@@ -13,6 +13,7 @@ import com.example.myapp012amynotehub.data.NoteDao
 import com.example.myapp012amynotehub.data.NoteHubDatabaseInstance
 import com.example.myapp012amynotehub.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val searchQuery = MutableStateFlow("")
 
         // Po kliknutí na FAB otevře AddNoteActivity
         binding.fabAddNote.setOnClickListener {
@@ -67,9 +70,37 @@ class MainActivity : AppCompatActivity() {
                 //Pošle nová data do adapteru, aby se překreslil RecyclerView.
                 adapter.submitList(notes)
             }
-
-
         }
+
+        // --- Vyhledávání v poznámkách ---
+        // Listener SearchView: změna textu → změní hodnotu Flow
+        binding.searchViewNotes.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean = false
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                searchQuery.value = newText ?: ""
+                return true
+            }
+        })
+
+        // Jeden společný collector, který reaguje na změnu textu
+        lifecycleScope.launch {
+            searchQuery.collectLatest { text ->
+                if (text.isEmpty()) {
+                    // Zobrazit všechny poznámky
+                    noteDao.getAllNotes().collectLatest { notes ->
+                        adapter.submitList(notes)
+                    }
+                } else {
+                    // Zobrazit filtrované poznámky
+                    noteDao.searchNotes(text).collectLatest { notes ->
+                        adapter.submitList(notes)
+                    }
+                }
+            }
+        }
+
+
 
 
 

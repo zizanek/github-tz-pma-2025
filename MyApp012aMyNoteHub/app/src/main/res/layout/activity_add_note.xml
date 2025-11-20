@@ -31,6 +31,31 @@
             android:inputType="textMultiLine"
             android:layout_marginBottom="20dp" />
 
+        <!-- Kategorie (Label) -->
+        <TextView
+            android:id="@+id/labelCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategorie"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Kategorie (Spinner) -->
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Datum vytvoření - pouze info -->
+        <TextView
+            android:id="@+id/textCreatedAtInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vytvořeno: ---"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="20dp" />
+
         <!-- Tlačítko pro uložení -->
         <Button
             android:id="@+id/btnSaveNote"
