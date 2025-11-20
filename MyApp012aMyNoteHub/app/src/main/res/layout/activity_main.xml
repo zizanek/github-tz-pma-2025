@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="Přidat poznámku"
         android:src="@drawable/baseline_add_24"
-        app:backgroundTint="@android:color/system_inverse_primary_dark"
+        android:backgroundTint="?attr/colorPrimary"
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
